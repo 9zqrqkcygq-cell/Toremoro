@@ -26,7 +26,7 @@ const lyricsData = [
   { time: 116.90, text: "思っていたよりも透明だから", color: "blue" },
   { time: 120.90, text: "（一瞬で過ぎ去った）", color: "red" },
   { time: 124.20, text: "（一分でいいから）", color: "white" },
-  { time: 127.50, text: "(This is Love Will Last Forever)", color: "red" },
+  { time: 127.50, text: "(This Love Will Last Forever)", color: "red" },
 
   { time: 137.00, text: "ひらり空にかざす手のひら リフレインはいつまでも", color: "pink" },
   { time: 143.50, text: "白い雲流れた彼方 目を凝らした", color: "yellow" },
@@ -73,6 +73,8 @@ slider.addEventListener("input", () => {
 });
 document.getElementById("playBtn").onclick = async () => {
   await audio.play();
+document.getElementById("playBtn").style.display = "none";
+document.getElementById("pauseBtn").style.display = "block";
 };
 
   audio.addEventListener("timeupdate", () => {
@@ -95,6 +97,8 @@ document.getElementById("playBtn").onclick = async () => {
 
 document.getElementById("pauseBtn").onclick = () => {
   audio.pause();
+document.getElementById("pauseBtn").style.display = "none";
+document.getElementById("playBtn").style.display = "block";
 };
 
 function formatTime(seconds) {
